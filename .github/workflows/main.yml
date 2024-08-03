@@ -1,0 +1,12 @@
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - python3 -m venv venv
+    - source venv/bin/activate
+    - pip install -r requirements.txt
+    - python -m unittest discover -s . -p "test_*.py"
+  tags:
+    - python
